@@ -1,0 +1,40 @@
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body { margin: 0; background: #111525; color: #eae8fa; font: 15px/1.65 system-ui, sans-serif; }
+button, input, select { font: inherit; }
+button { border: 1px solid #675c82; border-radius: 8px; background: #28233a; color: #faf6ff; padding: 10px 14px; cursor: pointer; min-height: 44px; }
+button.primary { background: #6d4b9b; border-color: #9674c4; }
+button:hover { filter: brightness(1.15); }
+button:disabled { opacity: .45; cursor: default; }
+button:focus-visible, a:focus-visible, summary:focus-visible { outline: 2px solid #d3b8ff; outline-offset: 3px; }
+a { color: #cdb8ef; }
+label { display: block; margin: 14px 0; }
+input, select { display: block; width: 100%; margin-top: 5px; background: #242439; color: #eee; border: 1px solid #777087; border-radius: 6px; padding: 7px; min-height: 40px; }
+input[type=range] { padding: 0; }
+.check { display: flex; gap: 10px; align-items: center; font-size: 13px; }
+.check input { width: 18px; min-height: 18px; margin: 0; }
+h1 { font-size: 23px; line-height: 1.4; margin: 0 0 12px; }
+h2 { font-size: 15px; margin-top: 22px; }
+.eyebrow { color: #b3a0ce; font-size: 11px; font-weight: 700; letter-spacing: .15em; margin: 0 0 12px; }
+.row { display: flex; gap: 8px; flex-wrap: wrap; }
+.fine { font-size: 12px; color: #bcb5ca; }
+.connection { font-size: 13px; color: #c7c4d7; }
+#scene { position: fixed; inset: 0; width: 100%; height: 100%; }
+aside { position: fixed; right: 16px; top: 16px; width: min(360px, calc(100vw - 32px)); max-height: calc(100dvh - 32px); overflow: auto; padding: 22px; background: #151421f5; border: 1px solid #554565; border-radius: 14px; }
+#show { position: fixed; right: 12px; top: 12px; opacity: .75; }
+#devices > div { border-top: 1px solid #43374f; padding: 8px 0; font-size: 13px; }
+#urls a { display: block; overflow-wrap: anywhere; font-size: 13px; padding: 8px 0; }
+#error { color: #ffafa9; overflow-wrap: anywhere; }
+#error:empty { display: none; }
+details { border-top: 1px solid #43374f; padding-top: 14px; margin-top: 24px; }
+summary { cursor: pointer; color: #c4b3da; font-size: 13px; padding: 4px 0; }
+.phone main { max-width: 540px; margin: auto; padding: 28px 20px; }
+.result { margin: 24px 0 16px; }
+.state { border: 1px solid #655575; padding: 12px; border-radius: 8px; font-size: 14px; }
+.state[data-valid=true] { background: #174e3b; border-color: #5ccfa5; }
+.state[data-valid=held] { background: #4b3a1d; border-color: #bd9b54; }
+.object { font-size: 34px; font-weight: 700; margin: 8px 0; }
+.camera-preview video { display: block; width: 100%; height: 150px; object-fit: contain; background: #080a12; border-radius: 8px; }
+#preview { width: 64px; height: 64px; image-rendering: pixelated; }
+#ranking { font: 12px/1.8 ui-monospace, monospace; white-space: pre-line; }
+#metrics { white-space: pre-line; }

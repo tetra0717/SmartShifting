@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>SmartShifting / Glint 受信</title>
+  <link rel="stylesheet" href="/glint.css">
+</head>
+<body class="phone">
+  <main>
+    <p class="eyebrow">SMARTSHIFTING / GLINT</p>
+    <h1>対象を読み取る</h1>
+    <p>カメラを起動し、背面レンズをモニターの対象に近づけて静止させてください。</p>
+    <div class="row">
+      <button id="start" class="primary">カメラを起動</button>
+      <button id="stop" disabled>停止</button>
+      <button id="reset">再取得</button>
+    </div>
+    <section class="result" aria-label="識別結果">
+      <p id="state" class="state" role="status" aria-live="polite">カメラ停止中</p>
+      <p id="object" class="object">—</p>
+    </section>
+    <p id="network" class="connection" role="status">接続中…</p>
+    <p id="error" role="alert"></p>
+    <div class="camera-preview"><video id="video" muted autoplay playsinline aria-label="カメラプレビュー"></video></div>
+    <details>
+      <summary>開発・診断</summary>
+      <p id="identity" class="fine"></p>
+      <label>カメラ<select id="camera"><option value="">背面カメラ（自動）</option></select></label>
+      <p id="metrics" class="fine">—</p>
+      <p id="fps" class="fine"></p>
+      <p id="ranking"></p>
+      <canvas id="preview" width="64" height="64" aria-label="解析領域"></canvas>
+      <label class="check"><input id="record" type="checkbox">詳細なRGB履歴を記録</label>
+      <button id="export">診断ログを保存</button>
+      <p class="fine">PCへ送るのは平均RGBと飽和率です。カメラ映像は送信しません。数値は適合度で、正解率ではありません。</p>
+    </details>
+  </main>
+  <script type="module" src="/glint-phone.js"></script>
+</body>
+</html>

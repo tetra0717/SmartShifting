@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>スマホの接続 / SmartShifting</title>
+  <link rel="stylesheet" href="/glint.css">
+</head>
+<body class="phone">
+  <main>
+    <p class="eyebrow">SMARTSHIFTING / SETUP</p>
+    <h1>スマホを接続する</h1>
+    <p>初回だけ、スマホのカメラに必要なHTTPSの準備をします。PCとスマホを同じWi-Fiへ接続してください。</p>
+    <h2>1. スマホでこのガイドを開く</h2>
+    <div id="setupUrls">接続先を確認中…</div>
+    <section id="certificate" hidden>
+      <h2>2. このPCの証明書をスマホへ登録</h2>
+      <p>下の証明書をダウンロードして、スマホの設定から登録します。自分のPCで表示した指紋と一致することを確認してください。</p>
+      <a href="/setup/ca.crt">このPCの証明書をダウンロード</a>
+      <p class="fine">SHA-256：<br><code id="fingerprint" style="overflow-wrap:anywhere"></code></p>
+      <details open>
+        <summary>iPhone / iPad</summary>
+        <p>Safariでダウンロードし、「設定」のダウンロード済みプロファイルからインストールします。その後「一般」→「情報」→「証明書信頼設定」で「Glint Local Development CA」のフル信頼を有効にします。</p>
+        <a href="https://support.apple.com/ja-jp/102390" target="_blank" rel="noopener">Appleの証明書設定の案内</a>
+      </details>
+      <details>
+        <summary>Android</summary>
+        <p>証明書を保存したら、設定内で「CA証明書」または「証明書のインストール」を検索し、CA証明書として登録します。メニュー名は機種により異なります。</p>
+      </details>
+      <p class="fine">この開発用PCの証明書だけを登録してください。実験が終わったらスマホの設定から削除できます。OSの設定を自動変更することはありません。</p>
+    </section>
+    <p id="certificateStatus"></p>
+    <h2>3. スマホでカメラを起動</h2>
+    <div id="phoneUrls"></div>
+    <p>カメラを許可し、PCを全画面にして操作パネルを隠します。背面レンズを対象に近づけ、静止させてください。</p>
+    <p id="setupError" role="alert"></p>
+    <p class="fine">接続できない場合は、PCが接続するWi-FiのURLを選び、PCのファイアウォールとWi-Fiの端末間通信設定を確認してください。別のPCや新しいクローンでは、そのPCの証明書を登録します。</p>
+    <a href="/">PC表示へ戻る</a>
+  </main>
+  <script type="module" src="/setup.js"></script>
+</body>
+</html>

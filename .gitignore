@@ -1,0 +1,11 @@
+.certs/
+*.log
+logs/
+node_modules/
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.pfx
+*.p12
